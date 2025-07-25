@@ -1,0 +1,95 @@
+:root {
+  /* Light mode (Default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f7f6;
+  --bg-tertiary: #f0f0f0;
+  --text-primary: #1a202c;
+  --text-secondary: #718096;
+  --border-color: #e2e8f0;
+  --accent-primary: #007bff;
+  --accent-primary-hover: #0056b3;
+  --accent-add: #42b983;
+  --accent-add-hover: #368a65;
+  --accent-save: #28a745;
+  --accent-edit: #ffc107;
+  --accent-delete: #dc3545;
+  --button-text-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+html.dark {
+  /* Dark mod */
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #4a5568;
+  --text-primary: #e2e8f0;
+  --text-secondary: #a0aec0;
+  --border-color: #4a5568;
+  --accent-primary: #4299e1;
+  --accent-primary-hover: #2b6cb0;
+  --accent-add: #38a169;
+  --accent-add-hover: #2f855a;
+  --accent-save: #38a169;
+  --accent-edit: #d69e2e;
+  --accent-delete: #e53e3e;
+  --button-text-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent-primary);
+  margin-bottom: 25px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 25px 0;
+  transition: border-color 0.3s ease;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 640px) {
+  body {
+    background-color: var(--bg-primary);
+  }
+
+  #app { padding: 0; }
+
+  .main-container {
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  h1 { font-size: 1.5rem; }
+
+  .add-task-form { flex-direction: column; }
+}
